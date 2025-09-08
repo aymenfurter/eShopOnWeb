@@ -11,6 +11,12 @@
         padding-bottom: 1rem;
         padding-top: 2rem;
 
+        // Mobile optimization for titles
+        @media screen and (max-width: $media-screen-s) {
+            padding-bottom: $mobile-margin;
+            padding-top: $mobile-padding;
+        }
+
         &--clean {
             padding-bottom: 0;
             padding-top: 0;
@@ -25,6 +31,11 @@
         &--border {
             border-bottom: $border-light solid $color-foreground-bright;
             padding: .5rem 0;
+
+            // Mobile optimization for item borders
+            @media screen and (max-width: $media-screen-s) {
+                padding: $mobile-margin 0;
+            }
 
             &:last-of-type {
                 border-color: transparent;
@@ -57,11 +68,29 @@
 
     &-image {
         height: $item-height;
+        
+        // Mobile optimization for images
+        @media screen and (max-width: $media-screen-s) {
+            height: 6rem;
+            width: auto;
+            max-width: 100%;
+        }
+        
+        @media screen and (max-width: $media-screen-xs) {
+            height: 4rem;
+        }
     }
 
     &-input {
         line-height: 1rem;
         width: 100%;
+        
+        // Mobile optimization for inputs
+        @media screen and (max-width: $media-screen-s) {
+            min-height: $mobile-touch-target;
+            font-size: $font-size-m;
+            padding: $mobile-padding/2;
+        }
     }
 
     &-checkout {
@@ -77,6 +106,15 @@
         text-align: center;
         text-transform: uppercase;
         transition: all $animation-speed-default;
+
+        // Mobile optimization for checkout button
+        @media screen and (max-width: $media-screen-s) {
+            width: 100%;
+            min-height: $mobile-touch-target;
+            font-size: $font-size-l;
+            padding: $mobile-padding;
+            margin-top: $mobile-padding;
+        }
 
         &:hover {
             background-color: $color-secondary-darker;

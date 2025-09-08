@@ -14,14 +14,44 @@
         bottom: 0;
         $height: 50px;
 
+        // Mobile optimization for footer
+        @media screen and (max-width: $media-screen-s) {
+            margin-top: $mobile-padding;
+            padding-bottom: $mobile-padding;
+            padding-top: $mobile-padding;
+        }
+
         &-brand {
             height: $height;
             width: 230px;
+            
+            // Mobile optimization for footer brand
+            @media screen and (max-width: $media-screen-s) {
+                width: 180px;
+                height: auto;
+            }
+        }
+        
+        &-text {
+            // Mobile optimization for footer text
+            @media screen and (max-width: $media-screen-s) {
+                font-size: $font-size-s;
+                text-align: center;
+            }
         }
     }
 
     &-header {
         margin: 15px;
+        
+        // Mobile optimization for header margin
+        @media screen and (max-width: $media-screen-s) {
+            margin: $mobile-margin;
+        }
+        
+        @media screen and (max-width: $media-screen-xs) {
+            margin: $mobile-margin/2;
+        }
     }
 
     &-wrapper {

@@ -51,6 +51,16 @@ select::-ms-expand {
     padding: 10px;
 }
 
+/* Mobile optimization for form inputs */
+@media screen and (max-width: 768px) {
+    .form-input {
+        min-height: 44px;
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 12px;
+        width: 100%;
+    }
+}
+
 .form-input-small {
     max-width: 100px !important;
 }
@@ -84,3 +94,51 @@ a:visited {
         color: #75B918;
         transition: color 0.35s;
     }
+
+/* Mobile optimizations */
+@media screen and (max-width: 768px) {
+    /* Improve touch targets */
+    a, button, .btn {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px;
+    }
+    
+    /* Improve text readability */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    /* Optimize container spacing */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Make images responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Improve table responsiveness */
+    table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further optimizations for very small screens */
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+}
