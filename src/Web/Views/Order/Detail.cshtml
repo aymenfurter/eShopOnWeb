@@ -19,7 +19,7 @@
             <article class="esh-orders-detail-items row">
                 <section class="esh-orders-detail-item col-xs-3">@Model.OrderNumber</section>
                 <section class="esh-orders-detail-item col-xs-3">@Model.OrderDate</section>
-                <section class="esh-orders-detail-item col-xs-2">$@Model.Total.ToString("N2")</section>
+                <section class="esh-orders-detail-item col-xs-2">CHF @Model.Total.ToString("N2")</section>
                 <section class="esh-orders-detail-item col-xs-3">@Model.Status</section>
             </article>
         </section>
@@ -55,9 +55,9 @@
                         <img class="esh-orders-detail-image" src="@item.PictureUrl">
                     </section>
                     <section class="esh-orders-detail-item esh-orders-detail-item--middle col-xs-3">@item.ProductName</section>
-                    <section class="esh-orders-detail-item esh-orders-detail-item--middle col-xs-1">$ @item.UnitPrice.ToString("N2")</section>
+                    <section class="esh-orders-detail-item esh-orders-detail-item--middle col-xs-1">CHF @item.UnitPrice.ToString("N2")</section>
                     <section class="esh-orders-detail-item esh-orders-detail-item--middle col-xs-1">@item.Units</section>
-                    <section class="esh-orders-detail-item esh-orders-detail-item--middle col-xs-2">$ @Math.Round(item.Units * item.UnitPrice, 2).ToString("N2")</section>
+                    <section class="esh-orders-detail-item esh-orders-detail-item--middle col-xs-2">CHF @Math.Round(item.Units * item.UnitPrice, 2).ToString("N2")</section>
                 </article>
             }
         </section>
@@ -70,7 +70,7 @@
 
             <article class="esh-orders-detail-items row">
                 <section class="esh-orders-detail-item col-xs-9"></section>
-                <section class="esh-orders-detail-item esh-orders-detail-item--mark col-xs-2">$ @Model.Total.ToString("N2")</section>
+                <section class="esh-orders-detail-item esh-orders-detail-item--mark col-xs-2">CHF @Model.Total.ToString("N2")</section>
             </article>
         </section>
     </div>

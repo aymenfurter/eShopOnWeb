@@ -112,4 +112,4 @@
   font-weight: 900;
   text-align: center; }
   .esh-catalog-price::before {
-    content: '$'; }
+    content: 'CHF '; }
