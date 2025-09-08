@@ -6,6 +6,8 @@
 
 .esh-basket {
     min-height: 80vh;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
 
     &-titles {
         padding-bottom: 1rem;
@@ -19,11 +21,12 @@
 
     &-title {
         text-transform: uppercase;
+        color: var(--text-primary);
     }
 
     &-items {
         &--border {
-            border-bottom: $border-light solid $color-foreground-bright;
+            border-bottom: $border-light solid var(--border-color);
             padding: .5rem 0;
 
             &:last-of-type {
@@ -41,6 +44,7 @@
     &-item {
         font-size: $font-size-m;
         font-weight: $font-weight-semilight;
+        color: var(--text-primary);
 
         &--middle {
             line-height: $item-height;
@@ -51,7 +55,7 @@
         }
 
         &--mark {
-            color: $color-brand;
+            color: var(--brand-color);
         }
     }
 
@@ -62,10 +66,13 @@
     &-input {
         line-height: 1rem;
         width: 100%;
+        background-color: var(--input-bg);
+        border-color: var(--input-border);
+        color: var(--text-primary);
     }
 
     &-checkout {
-        background-color: $color-secondary;
+        background-color: var(--secondary-color);
         border: 0;
         border-radius: 0;
         color: $color-foreground-brighter;
@@ -79,7 +86,7 @@
         transition: all $animation-speed-default;
 
         &:hover {
-            background-color: $color-secondary-darker;
+            opacity: 0.8;
             transition: all $animation-speed-default;
         }
 

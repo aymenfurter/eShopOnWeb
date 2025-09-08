@@ -1,20 +1,31 @@
-﻿.esh-app-footer {
-  background-color: #000000;
-  border-top: 1px solid #EEEEEE;
+.esh-app-footer {
+  background-color: var(--footer-bg);
+  border-top: 1px solid var(--border-color);
   margin-top: 2.5rem;
   padding-bottom: 2.5rem;
   padding-top: 2.5rem;
   width: 100%;
-  bottom: 0; }
-  .esh-app-footer-brand {
-    height: 50px;
-    width: 230px; }
-
+  bottom: 0;
+  color: var(--footer-text);
+}
+.esh-app-footer-brand {
+  height: 50px;
+  width: 230px;
+}
+.esh-app-footer-text {
+  color: var(--footer-text);
+}
 .esh-app-header {
-  margin: 15px; }
-
+  margin: 15px;
+  background-color: var(--header-bg);
+}
 .esh-app-wrapper {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/*# sourceMappingURL=app.component.css.map */

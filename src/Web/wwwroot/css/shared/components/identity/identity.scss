@@ -12,6 +12,7 @@
 
     &-name {
         display: inline-block;
+        color: var(--text-primary);
 
         &--upper {
             text-transform: uppercase;
@@ -27,7 +28,7 @@
     }
 
     &-drop {
-        background: $color-background-brighter;
+        background: var(--dropdown-bg);
         height: 10px;
         width: 10rem;
         overflow: hidden;
@@ -36,20 +37,23 @@
         right: 0;
         top: 2.5rem;
         transition: height $animation-speed-default;
+        z-index: 1000;
     }
 
     &:hover &-drop {
-        border: $border-light solid $color-foreground-bright;
+        border: $border-light solid var(--dropdown-border);
         height: 10rem;
         transition: height $animation-speed-default;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     &-item {
         cursor: pointer;
         transition: color $animation-speed-default;
+        color: var(--text-primary);
 
         &:hover {
-            color: $color-secondary-dark;
+            color: var(--secondary-color);
             transition: color $animation-speed-default;
         }
     }

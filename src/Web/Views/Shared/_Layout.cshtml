@@ -15,14 +15,27 @@
         <link rel="stylesheet" href="~/css/basket/basket-status/basket-status.component.css" />
         <link rel="stylesheet" href="~/css/catalog/catalog.component.css" />
         <link rel="stylesheet" href="~/css/orders/orders.component.css" />
+        <link rel="stylesheet" href="~/css/theme.css" />
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/theme.css" />
     </environment>
 </head>
+<script>
+// Initialize theme immediately to prevent flash
+(function() {
+    const savedTheme = localStorage.getItem('eShopTheme');
+    const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = savedTheme || (systemDarkMode ? 'dark' : 'light');
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+})();
+</script>
 <body>
     <div class="esh-app-wrapper">
         <header class="esh-app-header">
@@ -32,6 +45,11 @@
                         <a asp-area="" asp-page="/Index">
                             <img src="~/images/brand.png" alt="eShop On Web" />
                         </a>
+                    </section>
+                    <section class="col-lg-1 col-md-1 col-xs-12 d-flex align-items-center">
+                        <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+                            <span class="icon">🌙</span>Dark Mode
+                        </button>
                     </section>
                     <partial name="_LoginPartial" />
                 </article>
@@ -52,6 +70,7 @@
     <environment names="Development,Docker">
         <script src="~/lib/jquery/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/theme.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
@@ -64,6 +83,7 @@
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/theme.js"></script>
     </environment>
     @RenderSection("scripts", required: false)
 </body>

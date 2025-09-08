@@ -1,0 +1,133 @@
+/* Theme System with CSS Custom Properties */
+
+/* Default Light Theme Variables */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-muted: #868e96;
+    --border-color: #dee2e6;
+    --brand-color: #00A69C;
+    --secondary-color: #83D01B;
+    --warning-color: #ff0000;
+    --link-color: #000000;
+    --link-hover-color: #75B918;
+    --footer-bg: #000000;
+    --footer-text: #EEEEEE;
+    --header-bg: transparent;
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-border: #ced4da;
+    --dropdown-bg: #ffffff;
+    --dropdown-border: #EEEEEE;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --bg-tertiary: #3a3a3a;
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --border-color: #444444;
+    --brand-color: #00C9BA;
+    --secondary-color: #9AE842;
+    --warning-color: #ff4444;
+    --link-color: #ffffff;
+    --link-hover-color: #9AE842;
+    --footer-bg: #111111;
+    --footer-text: #ffffff;
+    --header-bg: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --input-bg: #3a3a3a;
+    --input-border: #555555;
+    --dropdown-bg: #2d2d2d;
+    --dropdown-border: #444444;
+}
+
+/* Apply theme variables to common elements */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Links */
+a, a:active, a:visited {
+    color: var(--link-color);
+    transition: color 0.35s;
+}
+
+a:hover, a:active {
+    color: var(--link-hover-color);
+}
+
+/* Cards and containers */
+.card, .esh-catalog-item, .form-control {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Form inputs */
+.form-input, .form-control, input, select, textarea {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--text-primary);
+}
+
+.form-input:focus, .form-control:focus, input:focus, select:focus, textarea:focus {
+    border-color: var(--brand-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 166, 156, 0.25);
+}
+
+[data-theme="dark"] .form-input:focus, 
+[data-theme="dark"] .form-control:focus, 
+[data-theme="dark"] input:focus, 
+[data-theme="dark"] select:focus, 
+[data-theme="dark"] textarea:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 201, 186, 0.25);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: var(--brand-color);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 10px;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.theme-toggle:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--brand-color);
+    outline-offset: 2px;
+}
+
+/* Icons for theme toggle */
+.theme-toggle .icon {
+    display: inline-block;
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+/* Responsive positioning */
+@media (max-width: 768px) {
+    .theme-toggle {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+        margin-left: 5px;
+    }
+}

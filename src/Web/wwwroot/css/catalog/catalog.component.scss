@@ -18,7 +18,7 @@
     $filter-height: 65px;
 
     &-filters {
-        background-color: $color-brand;
+        background-color: var(--brand-color);
         height: $filter-height;
     }
 
@@ -27,20 +27,29 @@
     &-filter {
         -webkit-appearance: none;
         background-color: transparent;
-        border-color: $color-brand-bright;
-        color: $color-foreground-brighter;
+        border-color: var(--brand-color);
+        color: var(--text-primary);
         cursor: pointer;
         margin-right: 1rem;
         margin-top: .5rem;
         min-width: 140px;
-        outline-color: $color-secondary;
+        outline-color: var(--secondary-color);
         padding-bottom: 0;
         padding-left: $filter-padding;
         padding-right: $filter-padding;
         padding-top: $filter-padding * 3;
 
         option {
-            background-color: $color-brand;
+            background-color: var(--brand-color);
+            color: var(--text-primary);
+        }
+    }
+
+    [data-theme="dark"] &-filter {
+        color: $color-foreground-brighter;
+        
+        option {
+            color: $color-foreground-brighter;
         }
     }
 
@@ -50,7 +59,7 @@
         z-index: 0;
 
         &::before {
-            color: rgba($color-foreground-brighter, .5);
+            color: rgba(255, 255, 255, .7);
             content: attr(data-title);
             font-size: $font-size-xs;
             margin-left: $filter-padding;
@@ -73,7 +82,7 @@
     }
 
     &-send {
-        background-color: $color-secondary;
+        background-color: var(--secondary-color);
         color: $color-foreground-brighter;
         cursor: pointer;
         font-size: $font-size-m;
@@ -81,7 +90,7 @@
         transition: all $animation-speed-default;
 
         &:hover {
-            background-color: $color-secondary-darker;
+            opacity: 0.8;
             transition: all $animation-speed-default;
         }
     }
@@ -96,6 +105,14 @@
         width: 33%;
         display: inline-block;
         float: none !important;
+        background-color: var(--card-bg);
+        border-radius: 8px;
+        padding: 1rem;
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
 
         @media screen and (max-width: $media-screen-m) {
             width: 50%;
@@ -106,13 +123,17 @@
         }
     }
 
+    [data-theme="dark"] &-item:hover {
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    }
+
     &-thumbnail {
         max-width: 370px;
         width: 100%;
     }
 
     &-button {
-        background-color: $color-secondary;
+        background-color: var(--secondary-color);
         border: 0;
         color: $color-foreground-brighter;
         cursor: pointer;
@@ -128,7 +149,7 @@
         }
 
         &:hover {
-            background-color: $color-secondary-darker;
+            opacity: 0.8;
             transition: all $animation-speed-default;
         }
     }
@@ -139,12 +160,14 @@
         margin-top: .5rem;
         text-align: center;
         text-transform: uppercase;
+        color: var(--text-primary);
     }
 
     &-price {
         font-size: 28px;
         font-weight: 900;
         text-align: center;
+        color: var(--text-primary);
 
         &::before {
             content: '$';

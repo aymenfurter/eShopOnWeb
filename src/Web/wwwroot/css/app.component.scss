@@ -5,29 +5,37 @@
         $margin: 2.5rem;
         $padding: 2.5rem;
 
-        background-color: $color-background-darker;
-        border-top: $border-light solid $color-foreground-bright;
+        background-color: var(--footer-bg);
+        border-top: $border-light solid var(--border-color);
         margin-top: $margin;
         padding-bottom: $padding;
         padding-top: $padding;
         width: 100%;
         bottom: 0;
         $height: 50px;
+        color: var(--footer-text);
 
         &-brand {
             height: $height;
             width: 230px;
         }
+
+        &-text {
+            color: var(--footer-text);
+        }
     }
 
     &-header {
         margin: 15px;
+        background-color: var(--header-bg);
     }
 
     &-wrapper {
         display: flex;
         min-height: 100vh;
         flex-direction: column;
-        justify-content: space-between
+        justify-content: space-between;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
     }
 }

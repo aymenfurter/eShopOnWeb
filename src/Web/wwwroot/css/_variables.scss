@@ -28,6 +28,17 @@ $color-foreground-darker: #000000;
 $color-foreground-bright: #EEEEEE;
 $color-foreground-brighter: #FFFFFF;
 
+// Dark Mode Color Palette
+$dark-bg-primary: #1a1a1a;
+$dark-bg-secondary: #2d2d2d;
+$dark-bg-tertiary: #3a3a3a;
+$dark-text-primary: #ffffff;
+$dark-text-secondary: #e0e0e0;
+$dark-text-muted: #a0a0a0;
+$dark-border: #444444;
+$dark-brand: #00C9BA; // Slightly brighter brand color for dark mode
+$dark-secondary: #9AE842; // Brighter secondary for dark mode
+
 // Animations
 $animation-speed-default: .35s;
 $animation-speed-slow: .5s;

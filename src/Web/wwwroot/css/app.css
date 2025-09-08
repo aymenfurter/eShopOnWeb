@@ -16,6 +16,8 @@ body {
     font-size: 16px;
     font-weight: 400;
     z-index: 10;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 *,
@@ -25,7 +27,7 @@ body {
 }
 
 .preloading {
-    color: #00A69C;
+    color: var(--brand-color);
     display: block;
     font-size: 1.5rem;
     left: 50%;
@@ -49,6 +51,9 @@ select::-ms-expand {
     border-radius: 0;
     height: 45px;
     padding: 10px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-primary);
 }
 
 .form-input-small {
@@ -74,13 +79,13 @@ a,
 a:active,
 a:hover,
 a:visited {
-    color: #000;
+    color: var(--link-color);
     text-decoration: none;
     transition: color 0.35s;
 }
 
     a:hover,
     a:active {
-        color: #75B918;
+        color: var(--link-hover-color);
         transition: color 0.35s;
     }
