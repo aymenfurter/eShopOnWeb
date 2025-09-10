@@ -1,4 +1,6 @@
-﻿using System.Net.Mime;
+﻿using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
+using System.Net.Mime;
 using Ardalis.ListStartupServices;
 using Azure.Identity;
 using BlazorAdmin;
@@ -64,6 +66,17 @@ builder.Services.AddWebServices(builder.Configuration);
 
 // Add memory cache services
 builder.Services.AddMemoryCache();
+
+// Add localization services
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[] { "en-US", "de-DE" };
+    options.SetDefaultCulture("en-US")
+        .AddSupportedCultures(supportedCultures)
+        .AddSupportedUICultures(supportedCultures);
+});
+
 builder.Services.AddRouting(options =>
 {
     // Replace the type and the name used to refer to it with your own
@@ -184,6 +197,11 @@ else
 app.UseHttpsRedirection();
 app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
+
+// Add localization middleware
+var localizationOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>()!.Value;
+app.UseRequestLocalization(localizationOptions);
+
 app.UseRouting();
 
 app.UseCookiePolicy();

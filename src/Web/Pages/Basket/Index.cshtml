@@ -1,7 +1,7 @@
 ﻿@page "{handler?}"
 @model IndexModel
 @{
-    ViewData["Title"] = "Basket";
+    ViewData["Title"] = Localizer["Basket"];
 }
 <section class="esh-catalog-hero">
     <div class="container">
@@ -16,11 +16,11 @@
         <form method="post">
             <article class="esh-basket-titles row">
                 <br />
-                <section class="esh-basket-title col-xs-3">Product</section>
+                <section class="esh-basket-title col-xs-3">@Localizer["Product"]</section>
                 <section class="esh-basket-title col-xs-3 hidden-lg-down"></section>
-                <section class="esh-basket-title col-xs-2">Price</section>
-                <section class="esh-basket-title col-xs-2">Quantity</section>
-                <section class="esh-basket-title col-xs-2">Cost</section>
+                <section class="esh-basket-title col-xs-2">@Localizer["Price"]</section>
+                <section class="esh-basket-title col-xs-2">@Localizer["Quantity"]</section>
+                <section class="esh-basket-title col-xs-2">@Localizer["Cost"]</section>
             </article>
             <div class="esh-catalog-items row">
                 <div asp-validation-summary="All" class="text-danger"></div>
@@ -49,7 +49,7 @@
                 <div class="container">
                     <article class="esh-basket-titles esh-basket-titles--clean row">
                         <section class="esh-basket-title col-xs-10"></section>
-                        <section class="esh-basket-title col-xs-2">Total</section>
+                        <section class="esh-basket-title col-xs-2">@Localizer["Total"]</section>
                     </article>
 
                     <article class="esh-basket-items row">
@@ -63,15 +63,15 @@
                 </div>
                 <div class="row">
                     <section class="esh-basket-item col-xs-1">
-                        <a asp-page="/Index" class="btn esh-basket-checkout text-white">[ Continue Shopping ]</a>
+                        <a asp-page="/Index" class="btn esh-basket-checkout text-white">@Localizer["ContinueShopping"]</a>
                     </section>
                     <section class="esh-basket-item col-xs-push-7 col-xs-4">
 
                         <button class="btn esh-basket-checkout" name="updatebutton" value="" type="submit"
                                 asp-page-handler="Update">
-                            [ Update ]
+                            @Localizer["Update"]
                         </button>
-                        <a asp-page="./Checkout" class="btn esh-basket-checkout">[ Checkout ]</a>
+                        <a asp-page="./Checkout" class="btn esh-basket-checkout">@Localizer["Checkout"]</a>
                     </section>
                 </div>
             </div>

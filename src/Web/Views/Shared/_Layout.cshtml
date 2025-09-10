@@ -33,6 +33,16 @@
                             <img src="~/images/brand.png" alt="eShop On Web" />
                         </a>
                     </section>
+                    <section class="col-lg-1 col-md-2 col-xs-12" style="margin-top: 15px;">
+                        <div class="language-switcher" style="text-align: center;">
+                            <a href="/Culture/SetCulture?culture=en-US&returnUrl=@Context.Request.Path" 
+                               class="@(System.Globalization.CultureInfo.CurrentCulture.Name == "en-US" ? "active" : "")" 
+                               style="color: white; text-decoration: none; font-weight: @(System.Globalization.CultureInfo.CurrentCulture.Name == "en-US" ? "bold" : "normal")">EN</a> |
+                            <a href="/Culture/SetCulture?culture=de-DE&returnUrl=@Context.Request.Path" 
+                               class="@(System.Globalization.CultureInfo.CurrentCulture.Name == "de-DE" ? "active" : "")" 
+                               style="color: white; text-decoration: none; font-weight: @(System.Globalization.CultureInfo.CurrentCulture.Name == "de-DE" ? "bold" : "normal")">DE</a>
+                        </div>
+                    </section>
                     <partial name="_LoginPartial" />
                 </article>
             </div>
@@ -43,7 +53,7 @@
                 <article class="row">
                     <section class="col-sm-6"></section>
                     <section class="col-sm-6">
-                        <div class="esh-app-footer-text hidden-xs"> e-ShopOnWeb. All rights reserved </div>
+                        <div class="esh-app-footer-text hidden-xs"> @Localizer["FooterText"] </div>
                     </section>
                 </article>
             </div>

@@ -12,21 +12,21 @@
                     {
                         <a class="esh-identity-item"
                            asp-page="/Admin/Index">
-                            <div class="esh-identity-name esh-identity-name--upper">Admin</div>
+                            <div class="esh-identity-name esh-identity-name--upper">@Localizer["Admin"]</div>
                         </a>
                     }
                     <a class="esh-identity-item"
                        asp-controller="Order"
                        asp-action="MyOrders">
-                        <div class="esh-identity-name esh-identity-name--upper">My orders</div>
+                        <div class="esh-identity-name esh-identity-name--upper">@Localizer["MyOrders"]</div>
                     </a>
                     <a class="esh-identity-item"
                        asp-controller="Manage"
                        asp-action="MyAccount">
-                        <div class="esh-identity-name esh-identity-name--upper">My account</div>
+                        <div class="esh-identity-name esh-identity-name--upper">@Localizer["MyAccount"]</div>
                     </a>
                     <a class="esh-identity-item" href="javascript:document.getElementById('logoutForm').submit()">
-                        <div class="esh-identity-name esh-identity-name--upper">Log Out</div>
+                        <div class="esh-identity-name esh-identity-name--upper">@Localizer["Logout"]</div>
                         <img class="esh-identity-image" src="~/images/logout.png">
                     </a>
                 </section>
@@ -47,7 +47,7 @@ else
                 <div class="esh-identity-item">
 
                     <a asp-area="Identity" asp-page="/Account/Login" class="esh-identity-name esh-identity-name--upper">
-                        Login
+                        @Localizer["Login"]
                     </a>
                 </div>
             </section>
