@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Localization;
+using Microsoft.eShopWeb.Web.Resources;
 using System.Net.Mime;
 using Ardalis.ListStartupServices;
 using Azure.Identity;
@@ -69,12 +71,15 @@ builder.Services.AddMemoryCache();
 
 // Add localization services
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+builder.Services.AddScoped<Microsoft.eShopWeb.Web.Services.ISimpleLocalizationService, Microsoft.eShopWeb.Web.Services.SimpleLocalizationService>();
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     var supportedCultures = new[] { "en-US", "de-DE" };
     options.SetDefaultCulture("en-US")
         .AddSupportedCultures(supportedCultures)
         .AddSupportedUICultures(supportedCultures);
+    
+    options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
 });
 
 builder.Services.AddRouting(options =>

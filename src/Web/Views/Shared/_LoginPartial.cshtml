@@ -12,21 +12,21 @@
                     {
                         <a class="esh-identity-item"
                            asp-page="/Admin/Index">
-                            <div class="esh-identity-name esh-identity-name--upper">@Localizer["Admin"]</div>
+                            <div class="esh-identity-name esh-identity-name--upper">@Localizer.GetString("Admin")</div>
                         </a>
                     }
                     <a class="esh-identity-item"
                        asp-controller="Order"
                        asp-action="MyOrders">
-                        <div class="esh-identity-name esh-identity-name--upper">@Localizer["MyOrders"]</div>
+                        <div class="esh-identity-name esh-identity-name--upper">@Localizer.GetString("MyOrders")</div>
                     </a>
                     <a class="esh-identity-item"
                        asp-controller="Manage"
                        asp-action="MyAccount">
-                        <div class="esh-identity-name esh-identity-name--upper">@Localizer["MyAccount"]</div>
+                        <div class="esh-identity-name esh-identity-name--upper">@Localizer.GetString("MyAccount")</div>
                     </a>
                     <a class="esh-identity-item" href="javascript:document.getElementById('logoutForm').submit()">
-                        <div class="esh-identity-name esh-identity-name--upper">@Localizer["Logout"]</div>
+                        <div class="esh-identity-name esh-identity-name--upper">@Localizer.GetString("Logout")</div>
                         <img class="esh-identity-image" src="~/images/logout.png">
                     </a>
                 </section>
@@ -47,7 +47,7 @@ else
                 <div class="esh-identity-item">
 
                     <a asp-area="Identity" asp-page="/Account/Login" class="esh-identity-name esh-identity-name--upper">
-                        @Localizer["Login"]
+                        @Localizer.GetString("Login")
                     </a>
                 </div>
             </section>

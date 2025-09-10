@@ -1,6 +1,6 @@
 ﻿@page
 @{
-    ViewData["Title"] = Localizer["Catalog"];
+    ViewData["Title"] = Localizer.GetString("Catalog");
     @model IndexModel
 }
 <section class="esh-catalog-hero">
@@ -11,10 +11,10 @@
 <section class="esh-catalog-filters">
     <div class="container">
         <form method="get">
-            <label class="esh-catalog-label" data-title="@Localizer["Brand"]">
+            <label class="esh-catalog-label" data-title="@Localizer.GetString("Brand")">
                 <select asp-for="@Model.CatalogModel.BrandFilterApplied" asp-items="@Model.CatalogModel.Brands" class="esh-catalog-filter"></select>
             </label>
-            <label class="esh-catalog-label" data-title="@Localizer["Type"]">
+            <label class="esh-catalog-label" data-title="@Localizer.GetString("Type")">
                 <select asp-for="@Model.CatalogModel.TypesFilterApplied" asp-items="@Model.CatalogModel.Types" class="esh-catalog-filter"></select>
             </label>
             <input class="esh-catalog-send" type="image" src="~/images/arrow-right.svg" />
@@ -39,7 +39,7 @@
     else
     {
         <div class="esh-catalog-items row">
-            @Localizer["NoResultsMessage"]
+            @Localizer.GetString("NoResultsMessage")
         </div>
     }
 </div>
